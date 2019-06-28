@@ -1,0 +1,17 @@
+apply from: '../scripts/module.gradle'
+
+dependencies {
+    compileOnly deps.appcompat_v7
+    implementation deps.wechatPay // 微信
+    implementation files("libs/alipaySdk-20180403.jar") // 支付宝
+}
+
+apply plugin: 'bintray-release'
+publish {
+    userOrg = 'zfy'
+    groupId = 'com.zfy'
+    artifactId = 'paysdk'
+    publishVersion = '1.0.0'
+    desc = 'paysdk'
+    website = 'https://github.com/Android-Modularity/PaySdk'
+}
